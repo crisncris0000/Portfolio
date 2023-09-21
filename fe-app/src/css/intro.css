@@ -6,12 +6,24 @@
     justify-content: space-around;
 }
 
-.about-me ul{
+.section-title {
+    margin-top: 3rem;
+}
+
+.about-me .title ul{
     list-style: none;
 }
 
-.circular-image {
+.about-me .title ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
 
+.about-me .text {
+    width: 40rem;
+}
+
+.circular-image {
     width: 25vw;
     height: 40vw;
     border-radius: 50%;
