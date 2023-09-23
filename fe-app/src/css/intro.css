@@ -1,41 +1,135 @@
 .introduction {
-    
     margin-top: 5rem;
+    position: relative; 
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+}
 
+.header h1, .header .job-titles h6, .header .links button {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.img-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    color: white;
+}
+
+.header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+}
+
+.header h1 {
+    color: #E3D9CA;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.header .job-titles ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.header .job-titles {
+   display: flex;
+   justify-content: space-around;
+}
+
+.header .job-titles h6 {
+    color: #89A8C3;
+}
+
+.header .links button {
+    margin: 0.5rem;
+    height: 40px;
+    background-color: rgba(137, 168, 195, 0.8);
+    border: 1px solid #E3D9CA;
+    color: #E3D9CA;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.header .links button:hover {
+    background-color: rgba(137, 168, 195, 1);
+    transform: scale(1.05);
+}
+
+.about-me {
+    background: rgba(0, 0, 0, 0.435);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 20px auto;
+    backdrop-filter: blur(10px);
+}
+
+.about-me p {
+    color: #E2E8F0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
+.about-me h1 {
+    color: #E2E8F0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.technologies {
+    background: linear-gradient(145deg, #121212, #2e2e2e);
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); 
+    width: 100%;
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 }
 
-.section-title {
-    margin-top: 3rem;
+.technologies h1 {
+    color: #E2E8F0;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 2.2rem;
 }
 
-.about-me .title ul{
-    list-style: none;
+.technology-logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
 }
 
-.about-me .title ul li {
-    display: inline-block;
-    margin-right: 10px;
+.technology-logo img {
+    height: 80px;
+    width: 100px;
+    margin: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
 }
 
-.about-me .text {
-    width: 40rem;
+.technology-logo img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 
-.circular-image {
-    width: 25vw;
-    height: 40vw;
-    border-radius: 50%;
-    overflow: hidden;
-
-    border: 2px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.circular-image img {
-    display: block;
-    width: 100%; 
-    height: 100%;
-    object-fit:cover;  
-}

@@ -1,6 +1,11 @@
+.body {
+    background-image: url('../images/space-background.jpg');
+}
+
 .custom-navbar {
-    background-color: #777da7;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(145deg, #121212, #2e2e2e);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #444;
 }
 
 .custom-navbar .navbar-brand {
@@ -10,7 +15,7 @@
 }
 
 .custom-navbar .nav-link {
-    color: #A0AEC0; 
+    color: #AAB8C2;
     padding: 0.5rem 1rem;
     transition: color 0.3s ease;
 }
@@ -26,4 +31,17 @@
 
 .custom-navbar .navbar-toggler {
     border-color: #A0AEC0;
+    background-color: #2e2e2e;
+}
+
+.custom-navbar:before {
+    content: "";
+    background-image: url('../images/star-texture.jpg');
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
