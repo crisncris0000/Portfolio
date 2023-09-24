@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { Element } from 'react-scroll';
+import MyPic from '../../images/my-pic.jpg';
 
 export default function AboutMe() {
   return (
     <div className="about-me">
-        <h1>About Me</h1>
+        <Element name='about'><h1>About Me</h1></Element>
+        <img className='my-pic' src={MyPic}/>
         <p>
             <br />
             I am a CUNY Student at Lehman College majoring in Computer Science, born and raised in

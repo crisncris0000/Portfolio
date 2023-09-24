@@ -94,7 +94,7 @@
 }
 
 .technologies {
-    background: linear-gradient(145deg, #121212, #2e2e2e);
+    background: linear-gradient(145deg, #515050, #989393);
     padding: 40px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); 
@@ -133,3 +133,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 
+.my-pic {
+    height: 350px;
+    width: 250px;
+}
