@@ -2,7 +2,6 @@ import React from 'react';
 import '../../css/projects.css';
 import Mckcreations from '../../images/mckcreation.png';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import LearnMore from './LearnMore';
 
 export default function Projects() {

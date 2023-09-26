@@ -1,6 +1,6 @@
 .project-container {
     background-color: #020916;
-    padding: 50px 0;
+    padding: 35px 0;
     position: relative;
     overflow: hidden;
 }
@@ -8,42 +8,38 @@
 .project-title {
     color: #E2E8F0;
     text-align: center;
-    margin-bottom: 30px;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+    text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.5);
 }
 
 .project-list {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 25px;
 }
 
+/* Adjusted card */
 .space-card {
     background: #121212;
     color: #E2E8F0;
     border: 1px solid #444;
     transition: transform 0.3s, box-shadow 0.3s;
+    max-width:20rem;
 }
 
 .space-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-7px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.5);
 }
 
 .space-card .card-title {
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 7px;
+    font-size: 1.3rem;
 }
 
-.project-container::before, .project-container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1; /* Place behind content */
-    opacity: 0.3;
+.space-card .card-text {
+    font-size: 1rem;
 }
