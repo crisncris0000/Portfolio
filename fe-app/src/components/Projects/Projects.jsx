@@ -1,17 +1,18 @@
 import React from 'react';
 import '../../css/projects.css';
-import Mckcreations from '../../images/mckcreation.png';
-import LegalTeamManagement from '../../images/legal-team-management.jpeg';
-import JumpSideDash from '../../images/jump-side.png';
+import Mckcreations from '../../images/projects/mckcreation.png';
+import LegalTeamManagement from '../../images/projects/legal-team-management.jpeg';
+import JumpSideDash from '../../images/projects/jump-side.png';
 import Card from 'react-bootstrap/Card';
 import LearnMore from './LearnMore';
 import { Button } from 'react-bootstrap';
+import { Element } from 'react-scroll';
 
 export default function Projects() {
     return (
         <>
             <div className="project-container">
-                <h1 className="project-title">Projects</h1>
+                <Element name="projects"><h1 className="project-title">Projects</h1></Element>
                 <div className="project-list">
                     <Card className="space-card">
                         <Card.Img variant="top" src={Mckcreations} />
@@ -87,7 +88,6 @@ export default function Projects() {
                         </Card.Body>
                     </Card>
 
-                    
                 </div>
             </div>
         </>

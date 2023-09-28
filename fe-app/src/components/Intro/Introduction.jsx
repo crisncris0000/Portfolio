@@ -1,5 +1,7 @@
 import React from 'react';
 import Space from '../../images/space.jpg';
+import Github from '../../images/socials/github.png';
+import LinkedIn from '../../images/socials/linkedin.png';
 import '../../css/intro.css';
 import { motion } from 'framer-motion';
 import AboutMe from './AboutMe';
@@ -34,6 +36,16 @@ export default function Introduction() {
           <div className="links">
             <button className="btn">Contact</button>
             <button className="btn">Download Resume</button>
+          </div>
+
+          <div className="socials">
+            <a href="https://github.com/crisncris0000" target="_blank" rel="noreferrer" className="social-link">
+              <img src={Github} alt="github logo"/>
+            </a>
+
+            <a href="https://www.linkedin.com/in/christopher-rivera-aa08071a3/" target="_blank" rel="noreferrer" className="social-link">
+              <img src={LinkedIn} alt="LinkedIn logo"/>
+            </a>
           </div>
 
         </div>

@@ -137,3 +137,18 @@
     height: 350px;
     width: 250px;
 }
+
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.socials img {
+    height: 50px;
+    width: 50px;
+}
+
+.social-link {
+    margin: 20px;
+}
