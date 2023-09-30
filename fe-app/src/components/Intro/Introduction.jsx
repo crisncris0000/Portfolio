@@ -35,9 +35,12 @@ export default function Introduction() {
 
           <div className="links">
             <button className="btn">Contact</button>
-            <button className="btn">Download Resume</button>
+            <button className="btn">
+              <a href="/ChristopherRiv-CSResume.docx.pdf" download style={{color: "white"}}>
+                Download Resume
+              </a>
+            </button>
           </div>
-
           <div className="socials">
             <a href="https://github.com/crisncris0000" target="_blank" rel="noreferrer" className="social-link">
               <img src={Github} alt="github logo"/>
