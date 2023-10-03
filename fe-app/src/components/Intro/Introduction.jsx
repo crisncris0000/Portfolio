@@ -4,6 +4,8 @@ import Github from '../../images/socials/github.png';
 import LinkedIn from '../../images/socials/linkedin.png';
 import '../../css/intro.css';
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
+import Nav from 'react-bootstrap/Nav';
 import AboutMe from './AboutMe';
 import Technologies from './Technologies';
 
@@ -34,7 +36,11 @@ export default function Introduction() {
           </div>
 
           <div className="links">
-            <button className="btn">Contact</button>
+            <button className="btn">
+              <Link to="contact" smooth={true} duration={500}>
+                <Nav.Link>Contact</Nav.Link>
+              </Link>
+            </button>
             <button className="btn">
               <a href="/ChristopherRiv-CSResume.docx.pdf" download style={{color: "white"}}>
                 Download Resume
