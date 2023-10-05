@@ -30,7 +30,7 @@ func main() {
 	r := chi.NewRouter()
 
 	c := cors.New(cors.Options{
-		AllowedOrigins:   []string{"http://localhost:3000"},
+		AllowedOrigins:   []string{"https://riverachristopher.com"},
 		AllowedMethods:   []string{http.MethodPost},
 		AllowCredentials: true,
 	})
