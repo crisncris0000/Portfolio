@@ -3,6 +3,7 @@ import '../../css/projects.css';
 import Mckcreations from '../../images/projects/mckcreation.png';
 import LegalTeamManagement from '../../images/projects/legal-team-management.jpeg';
 import JumpSideDash from '../../images/projects/jump-side.png';
+import Minesweep from '../../images/projects/minesweep.jpeg';
 import Card from 'react-bootstrap/Card';
 import LearnMore from './LearnMore';
 import { Button } from 'react-bootstrap';
@@ -83,6 +84,34 @@ export default function Projects() {
                             <Button variant="light" className="custom-btn">
                                 <a href="https://phillipb9345.itch.io/jump-side-dash" target="_blank" rel="noreferrer">
                                     Live Link
+                                </a>
+                            </Button>
+                        </Card.Body>
+                    </Card>
+
+
+                    <Card className="space-card">
+                        <Card.Img variant="top" src={Minesweep} />
+                        <Card.Body>
+                            <Card.Title>Minesweep</Card.Title>
+                            <Card.Text>
+                                Recreated an old game called Minesweep using Java GUI by using Swing
+                            </Card.Text>
+                            <LearnMore projectTitle={"Minesweeper"}
+                            description={`To win a round of Minesweeper, you must click on the board every square that doesn't have a mine under it. 
+                            Once you've done so, the game will be over. 
+                            If you accidentally click a square that has a mine beneath it, the game will be over.`}
+                            status={"Completed"}/>
+
+                            <Button variant="light" className="custom-btn">
+                                <a href="https://github.com/crisncris0000/Minesweeper" target="_blank" rel="noreferrer">
+                                    Source Code
+                                </a>
+                            </Button>
+
+                            <Button variant="light" className="custom-btn">
+                                <a href="https://youtu.be/cWJHKn839K4" target="_blank" rel="noreferrer">
+                                    Video explanation
                                 </a>
                             </Button>
                         </Card.Body>

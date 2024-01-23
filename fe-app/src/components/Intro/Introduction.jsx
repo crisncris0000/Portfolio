@@ -30,7 +30,7 @@ export default function Introduction() {
 
           <div className="job-titles">
             <ul>
-              <li><h6>Fullstack Developer</h6></li>
+              <li><h6>Backend Developer</h6></li>
               <li><h6>Game Developer</h6></li>
             </ul>
           </div>

@@ -53,7 +53,7 @@ func main() {
 	}
 
 	fmt.Println("Port listening on port :", portString)
-	log.Fatal(http.ListenAndServe(portString, r))
+	log.Fatal(http.ListenAndServe(":"+portString, r))
 }
 
 func sendEmail(w http.ResponseWriter, r *http.Request) {
