@@ -10,6 +10,12 @@ import AboutMe from './AboutMe';
 import Technologies from './Technologies';
 
 export default function Introduction() {
+
+  const handleDownload = () => {
+    const pdfPath = process.env.PUBLIC_URL + '/ChristopherRiv-CSResume.docx.pdf';
+    window.open(pdfPath, '_blank');
+  };
+
   return (
     <>
       <div className="introduction">
@@ -41,12 +47,11 @@ export default function Introduction() {
                 <Nav.Link>Contact</Nav.Link>
               </Link>
             </button>
-            <button className="btn">
-              <a href="/ChristopherRiv-CSResume.docx.pdf" download style={{color: "white"}}>
+            <button className="btn" onClick={handleDownload}>
                 Download Resume
-              </a>
             </button>
           </div>
+
           <div className="socials">
             <a href="https://github.com/crisncris0000" target="_blank" rel="noreferrer" className="social-link">
               <img src={Github} alt="github logo"/>

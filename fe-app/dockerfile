@@ -2,11 +2,10 @@ FROM node:16
 
 WORKDIR /app
 
-COPY build ./build
 COPY package.json ./
 
-RUN npm install -g serve
+RUN npm install
 
 EXPOSE 3000
 
-CMD ["serve", "-s", "build", "-l", "3000"]
+CMD ["npm", "start"]
