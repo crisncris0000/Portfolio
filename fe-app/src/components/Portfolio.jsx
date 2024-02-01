@@ -6,9 +6,9 @@ import Projects from './Projects/Projects';
 export default function Portfolio() {
   return (
     <>
-        <Introduction />
-        <Projects />
-        <Contact />
+      <Introduction />
+      <Projects />
+      <Contact />
     </>
   )
 }

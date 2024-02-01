@@ -15,8 +15,8 @@ import ReactJS from '../../images/technologies/react.png';
 
 export default function Technologies() {
     const technologyImages = [
-        Java, CSharp, Go, Javascript,  HTMLLogo, CSS, Git, Docker, MySQL,
-        Postgresql, Spring, NodeJS, ReactJS
+      Java, CSharp, Go, Javascript,  HTMLLogo, CSS, Git, Docker, MySQL,
+      Postgresql, Spring, NodeJS, ReactJS
     ];
 
   return (
