@@ -13,27 +13,26 @@ const About = () => {
       <div className="flex flex-col items-center gap-8">
         {/* Manga Panel Style Section */}
         <div className="w-full max-w-4xl p-6 bg-gradient-to-br from-gray-800 to-black border-4 border-white rounded-xl shadow-xl">
-          <div className="flex gap-8">
-            {/* Manga Panel: Image Section */}
-            <div className="w-1/3 relative">
+          <div className="flex flex-col md:flex-row gap-8">
+            {/* Image Section */}
+            <div className="md:w-1/3 w-full relative">
               <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50 rounded-lg z-0"></div>
               <img
-                src={profileImage} // Replace with your image path
+                src={profileImage}
                 alt="Christopher Rivera"
-                className="w-full h-full object-cover rounded-lg border-4 border-gray-700 z-10"
+                className="w-full h-72 md:h-full object-cover rounded-lg border-4 border-gray-700 z-10 relative"
               />
             </div>
 
-            {/* Manga Panel: Text Section */}
-            <div className="w-2/3 text-left z-10">
-                <h2 className="text-4xl font-bold text-white mb-4">Christopher Rivera</h2>
-                <p className="text-lg text-gray-300 leading-relaxed">
-                    I'm a Computer Science undergraduate with a strong passion for both web and game development. 
-                    My journey began with an interest in game design, which naturally evolved into a pursuit of computer science. 
-                    Today, I specialize in full-stack development, with a focus on building engaging, efficient, 
-                    and user-friendly software solutions, while also doing game development on the side.
-                </p>
-
+            {/* Text Section */}
+            <div className="md:w-2/3 w-full text-left z-10">
+              <h2 className="text-4xl font-bold text-white mb-4">Christopher Rivera</h2>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                I'm a Computer Science undergraduate with a strong passion for both web and game development.
+                My journey began with an interest in game design, which naturally evolved into a pursuit of computer science.
+                Today, I specialize in full-stack development, with a focus on building engaging, efficient,
+                and user-friendly software solutions, while also doing game development on the side.
+              </p>
             </div>
           </div>
 
@@ -47,16 +46,15 @@ const About = () => {
             </button>
           </div>
 
-          {/* Expanded Content (Conditional) */}
+          {/* Expanded Content */}
           {isExpanded && (
             <div className="mt-6 text-lg text-gray-300">
               <p className="text-lg mt-4 text-gray-400">
-                I'm a Latino male with a wide range of hobbies outside of tech. 
-                I enjoy going to the gym, playing video games, and watching anime and professional wrestling. 
-                I also follow basketball and have a deep love for animals — 
+                I'm a Latino male with a wide range of hobbies outside of tech.
+                I enjoy going to the gym, playing video games, and watching anime and professional wrestling.
+                I also follow basketball and have a deep love for animals —
                 I currently have a pet turtle who keeps me company.
               </p>
-
             </div>
           )}
         </div>

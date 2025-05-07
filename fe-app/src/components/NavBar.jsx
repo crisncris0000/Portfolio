@@ -10,15 +10,16 @@ const sections = [
 export default function NavBar() {
   const [darkMode, setDarkMode] = useState(true);
   const [activeSection, setActiveSection] = useState('');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleScroll = (id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
+      setMenuOpen(false); // Close menu on click (for mobile)
     }
   };
 
-  // Scroll spy to highlight active section
   useEffect(() => {
     const handleScrollSpy = () => {
       const scrollPos = window.scrollY + window.innerHeight / 3;
@@ -50,19 +51,17 @@ export default function NavBar() {
           Chris<span className="text-white">/</span>Dev
         </span>
 
-        <div className="flex items-center gap-8">
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-8">
           {sections.map((section) => (
             <button
               key={section.id}
               onClick={() => handleScroll(section.id)}
               className={`relative text-base transition duration-200 focus:outline-none ${
                 darkMode ? 'text-gray-200' : 'text-gray-800'
-              } ${
-                activeSection === section.id ? 'text-pink-400 font-semibold' : ''
-              }`}
+              } ${activeSection === section.id ? 'text-pink-400 font-semibold' : ''}`}
             >
               {section.label}
-              {/* Glowing underline */}
               <span
                 className={`absolute left-0 -bottom-1 h-0.5 w-full transition-all duration-300 ${
                   activeSection === section.id
@@ -74,33 +73,78 @@ export default function NavBar() {
           ))}
         </div>
 
-        {/* Dark Mode Toggle */}
-        <button
-          onClick={() => setDarkMode((prev) => !prev)}
-          className="focus:outline-none"
-          aria-label="Toggle dark mode"
-        >
-          {darkMode ? (
-            <svg className="w-6 h-6 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M21.752 15.002A9.718 9.718 0 0112 21.75a9.75 9.75 0 01-9.75-9.75c0-4.136 2.664-7.626 6.398-9.093a.75.75 0 01.846 1.279A7.5 7.5 0 0012 19.5a7.48 7.48 0 006.314-3.404.75.75 0 01.954-.062.75.75 0 01.325.968z"
-              />
+        {/* Mobile Menu Toggle */}
+        <div className="flex items-center gap-4 md:hidden">
+          <button
+            onClick={() => setDarkMode((prev) => !prev)}
+            className="focus:outline-none"
+            aria-label="Toggle dark mode"
+          >
+            {darkMode ? (
+              <svg className="w-6 h-6 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M21.752 15.002A9.718 9.718 0 0112 21.75a9.75 9.75 0 01-9.75-9.75c0-4.136 2.664-7.626 6.398-9.093a.75.75 0 01.846 1.279A7.5 7.5 0 0012 19.5a7.48 7.48 0 006.314-3.404.75.75 0 01.954-.062.75.75 0 01.325.968z"
+                />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M12 3v1.5M12 19.5V21M4.219 4.219l1.061 1.061M17.657 17.657l1.061 1.061M3 12h1.5M19.5 12H21M4.219 19.781l1.061-1.061M17.657 6.343l1.061-1.061M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z"
+                />
+              </svg>
+            )}
+          </button>
+
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg className="w-7 h-7 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {menuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
             </svg>
-          ) : (
-            <svg className="w-6 h-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M12 3v1.5M12 19.5V21M4.219 4.219l1.061 1.061M17.657 17.657l1.061 1.061M3 12h1.5M19.5 12H21M4.219 19.781l1.061-1.061M17.657 6.343l1.061-1.061M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z"
-              />
-            </svg>
-          )}
-        </button>
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {menuOpen && (
+        <div className={`md:hidden px-6 pb-4 transition-all duration-300 ${darkMode ? 'bg-[#0f0f0f]' : 'bg-white'}`}>
+          <div className="flex flex-col gap-4">
+            {sections.map((section) => (
+              <button
+                key={section.id}
+                onClick={() => handleScroll(section.id)}
+                className={`text-base text-left transition duration-200 ${
+                  darkMode ? 'text-gray-200' : 'text-gray-800'
+                } ${activeSection === section.id ? 'text-pink-400 font-semibold' : ''}`}
+              >
+                {section.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
