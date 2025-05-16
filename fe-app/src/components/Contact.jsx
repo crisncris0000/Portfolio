@@ -18,7 +18,7 @@ const Contact = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:8080/send-email', {
+      const res = await fetch('https://api.riverachristopher.com/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
