@@ -1,0 +1,28 @@
+services:
+  frontend:
+    build:
+      context: ./fe-app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    restart: always
+    environment:
+      - NODE_ENV=production
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./be-app
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - frontend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

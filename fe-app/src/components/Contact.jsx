@@ -30,6 +30,10 @@ const Contact = () => {
 
     console.log(data)
 
+    setFirstName('')
+    setLastName('')
+    setEmail('')
+    setMessage('')
     } catch (error) {
       console.log(error)
     }
